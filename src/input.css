@@ -5,6 +5,8 @@
 
 /* Memberi tahu Tailwind lokasi template PHP yang harus dipindai. */
 @source "../index.php";
+@source "../views/**/*.php";
+@source "../includes/**/*.php";
 
 /* Mendefinisikan token tema agar nama font dan warna konsisten. */
 @theme {

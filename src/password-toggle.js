@@ -1,16 +1,22 @@
-// Mengambil tombol yang digunakan untuk menampilkan atau menyembunyikan password.
+// Mengambil tombol toggle dan input password
 const togglePassword = document.getElementById('togglePassword');
-// Mengambil input password yang tipe tampilannya akan diubah.
 const passwordInput = document.getElementById('password');
+const toggleText = document.getElementById('toggleText');
 
-// Menjalankan perubahan tipe input ketika tombol toggle ditekan.
+// Menjalankan perubahan tipe input dan state tombol saat tombol toggle ditekan
 togglePassword?.addEventListener('click', () => {
-    // Memeriksa apakah password sedang disembunyikan.
+    // Memeriksa apakah password sedang disembunyikan
     const isPassword = passwordInput.type === 'password';
-    // Menampilkan password atau menyembunyikannya sesuai keadaan sebelumnya.
+    
+    // Mengubah tipe input antara password dan text
     passwordInput.type = isPassword ? 'text' : 'password';
-    // Menyesuaikan teks tombol dengan aksi yang tersedia berikutnya.
-    togglePassword.textContent = isPassword ? 'Sembunyikan' : 'Lihat';
-    // Memperbarui label aksesibilitas agar sesuai dengan keadaan input.
+    
+    // Memperbarui teks tombol
+    if (toggleText) {
+        toggleText.textContent = isPassword ? 'Sembunyikan' : 'Lihat';
+    }
+    
+    // Memperbarui atribut aksesibilitas
     togglePassword.setAttribute('aria-label', isPassword ? 'Sembunyikan password' : 'Tampilkan password');
+    togglePassword.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
 });
