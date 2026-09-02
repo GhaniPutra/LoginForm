@@ -1,12 +1,19 @@
+/* Memuat font tampilan utama dan font judul dari Google Fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* Memuat Tailwind CSS sebagai dasar utility class halaman. */
 @import "tailwindcss";
 
+/* Memberi tahu Tailwind lokasi template PHP yang harus dipindai. */
 @source "../index.php";
 
+/* Mendefinisikan token tema agar nama font dan warna konsisten. */
 @theme {
+    /* Menetapkan font sans-serif untuk teks antarmuka. */
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    /* Menetapkan font serif untuk judul yang lebih dekoratif. */
     --font-serif: 'Playfair Display', Georgia, serif;
     
+    /* Menetapkan skala warna netral terang bertema kopi. */
     --color-coffee-50: #FAF6F0;
     --color-coffee-100: #F4ECE1;
     --color-coffee-200: #E6D7C3;
@@ -19,14 +26,20 @@
     --color-coffee-900: #2C1D12;
     --color-coffee-950: #190E08;
 
+    /* Menetapkan warna aksen merek dan variasi gelapnya. */
     --color-amber-brand: #C87D43;
     --color-amber-dark: #A9622D;
 }
 
+/* Menerapkan aturan dasar pada elemen halaman. */
 @layer base {
+    /* Menggunakan font antarmuka pada seluruh body. */
     body {
+        /* Mengambil font dari token tema yang telah didefinisikan. */
         font-family: var(--font-sans);
+        /* Menghaluskan tampilan teks pada browser berbasis WebKit. */
         -webkit-font-smoothing: antialiased;
+        /* Menghaluskan tampilan teks pada Firefox di macOS. */
         -moz-osx-font-smoothing: grayscale;
     }
 }
