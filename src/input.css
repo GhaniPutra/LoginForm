@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@source "../index.php";
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    
+    --color-coffee-50: #FAF6F0;
+    --color-coffee-100: #F4ECE1;
+    --color-coffee-200: #E6D7C3;
+    --color-coffee-300: #D3BDA0;
+    --color-coffee-400: #BC9E7C;
+    --color-coffee-500: #9E7B56;
+    --color-coffee-600: #84613D;
+    --color-coffee-700: #6B4C2F;
+    --color-coffee-800: #4B331F;
+    --color-coffee-900: #2C1D12;
+    --color-coffee-950: #190E08;
+
+    --color-amber-brand: #C87D43;
+    --color-amber-dark: #A9622D;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
